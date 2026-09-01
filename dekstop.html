@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exclusio — Pay less. Earn more.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#17130f;
+    --ink-2:#211b16;
+    --ink-3:#2a231d;
+    --ivory:#f4eee3;
+    --ivory-dim:#a99d8c;
+    --wine:#7a2230;
+    --wine-bright:#9c3040;
+    --gold:#c8a566;
+    --hair: rgba(244,238,227,0.10);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--ivory);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 48px;}
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(23,19,15,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--hair);
+  }
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:78px;}
+  .logo{font-family:'Fraunces', serif; font-size:1.5rem; letter-spacing:0.06em; font-weight:500;}
+  .logo span{color:var(--gold);}
+  .nav-links{display:flex; gap:36px; font-size:0.9rem; color:var(--ivory-dim);}
+  .nav-links a:hover{color:var(--ivory);}
+  .nav-right{display:flex; align-items:center; gap:16px;}
+  .btn-ghost{
+    font-size:0.85rem; letter-spacing:0.02em; color:var(--ivory-dim);
+    border:1px solid var(--hair); padding:10px 20px; border-radius:999px;
+    transition:border-color .2s, color .2s;
+  }
+  .btn-ghost:hover{border-color:var(--gold); color:var(--gold);}
+  .btn-primary{
+    background:var(--wine); color:var(--ivory); font-size:0.9rem; font-weight:500;
+    padding:12px 26px; border-radius:999px; letter-spacing:0.02em; display:inline-block;
+    box-shadow:0 8px 24px -8px rgba(122,34,48,0.6);
+    transition:background .2s, transform .2s;
+  }
+  .btn-primary:hover{background:var(--wine-bright); transform:translateY(-1px);}
+  .btn-secondary{
+    border:1px solid var(--hair); color:var(--ivory-dim); font-size:0.9rem;
+    padding:12px 24px; border-radius:999px; transition:border-color .2s, color .2s; display:inline-block;
+  }
+  .btn-secondary:hover{border-color:var(--ivory-dim); color:var(--ivory);}
+
+  /* HERO — split layout */
+  .hero{position:relative; padding:96px 0 100px; overflow:hidden;}
+  .hero .wrap{display:grid; grid-template-columns:1.05fr 0.95fr; gap:64px; align-items:center;}
+  .hero-mark{position:absolute; top:-120px; right:-120px; width:560px; height:560px; opacity:0.35; pointer-events:none;}
+  .eyebrow{font-size:0.78rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:22px;}
+  h1{font-family:'Fraunces', serif; font-size:3.6rem; line-height:1.08; font-weight:400; letter-spacing:-0.01em;}
+  h1 em{font-style:italic; color:var(--wine-bright); font-weight:400;}
+  .hero-copy p{margin:24px 0 0; max-width:440px; color:var(--ivory-dim); font-size:1.05rem; line-height:1.7;}
+  .hero-ctas{margin-top:36px; display:flex; gap:14px;}
+  .stat-row{display:flex; gap:44px; margin-top:56px; padding-top:32px; border-top:1px solid var(--hair);}
+  .stat .num{font-family:'Fraunces', serif; font-size:1.7rem; color:var(--gold);}
+  .stat .label{font-size:0.72rem; color:var(--ivory-dim); letter-spacing:0.06em; text-transform:uppercase; margin-top:4px;}
+
+  /* HERO visual — phone mock */
+  .hero-visual{position:relative; display:flex; justify-content:center;}
+  .phone{
+    width:300px; background:var(--ink-2); border:1px solid var(--hair); border-radius:32px;
+    padding:22px 18px; box-shadow:0 40px 80px -30px rgba(0,0,0,0.6); transform:rotate(2deg);
+  }
+  .phone-tag{font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ivory-dim); margin-bottom:16px;}
+  .mock-card{
+    background:var(--ink-3); border:1px solid var(--hair); border-radius:12px; padding:16px;
+    display:flex; align-items:center; gap:12px; margin-bottom:10px;
+  }
+  .mock-card:last-child{margin-bottom:0;}
+  .mock-avatar{width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg, var(--wine), var(--gold)); flex-shrink:0;}
+  .mock-lines .l1{width:110px; height:9px; background:var(--hair); border-radius:4px; margin-bottom:8px;}
+  .mock-lines .l2{width:70px; height:9px; background:var(--hair); border-radius:4px;}
+  .mock-price{margin-left:auto; font-family:'Fraunces', serif; color:var(--gold); font-size:0.85rem;}
+
+  hr.divider{border:none; border-top:1px solid var(--hair); margin:0;}
+
+  section{padding:96px 0;}
+  .kicker{font-size:0.78rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); margin-bottom:12px;}
+  h2{font-family:'Fraunces', serif; font-size:2.4rem; font-weight:400; line-height:1.2;}
+
+  /* PRINCIPLE — split heading/lede */
+  .principle{display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:start;}
+  .lede{color:var(--ivory-dim); font-size:1.05rem; line-height:1.8;}
+
+  /* FEATURES — 4 column row */
+  .section-head-row{display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:48px;}
+  .section-head-row h2{max-width:480px;}
+  .feature-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--hair); border:1px solid var(--hair); border-radius:16px; overflow:hidden;}
+  .feature{background:var(--ink-2); padding:36px 26px; transition:background .2s;}
+  .feature:hover{background:var(--ink-3);}
+  .feature svg{width:28px; height:28px; margin-bottom:20px;}
+  .feature h3{font-family:'Fraunces', serif; font-size:1.15rem; font-weight:500; margin-bottom:10px;}
+  .feature p{font-size:0.88rem; color:var(--ivory-dim); line-height:1.6;}
+
+  /* STEPS — horizontal with connector */
+  .steps-row{display:grid; grid-template-columns:repeat(3,1fr); gap:40px; margin-top:48px; position:relative;}
+  .steps-row::before{content:""; position:absolute; top:22px; left:8%; right:8%; height:1px; background:var(--hair);}
+  .step{position:relative;}
+  .step-num{
+    font-family:'Fraunces', serif; font-style:italic; color:var(--gold); font-size:1.9rem; line-height:1;
+    background:var(--ink); display:inline-block; padding-right:16px; position:relative; z-index:1;
+  }
+  .step h3{font-size:1.1rem; font-weight:600; margin:20px 0 10px;}
+  .step p{font-size:0.92rem; color:var(--ivory-dim); line-height:1.65; max-width:300px;}
+
+  /* SHOWCASE — side by side */
+  .showcase-split{display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center;}
+  .showcase-split .lede{margin-top:20px;}
+  .showcase{background:var(--ink-2); border:1px solid var(--hair); border-radius:24px; padding:34px 28px; box-shadow:0 30px 70px -30px rgba(0,0,0,0.5);}
+  .showcase-tag{font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ivory-dim); margin-bottom:20px;}
+
+  /* FAQ — two column */
+  .faq-split{display:grid; grid-template-columns:0.8fr 1.2fr; gap:64px;}
+  .faq-card{background:var(--ink-2); border:1px solid var(--hair); border-radius:18px; padding:32px; align-self:start;}
+  .faq-card h3{font-family:'Fraunces', serif; font-size:1.3rem; font-weight:500; margin-bottom:12px;}
+  .faq-card p{font-size:0.9rem; color:var(--ivory-dim); line-height:1.7; margin-bottom:20px;}
+  details{border-top:1px solid var(--hair); padding:22px 0;}
+  details:last-child{border-bottom:1px solid var(--hair);}
+  summary{list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:1.02rem; font-weight:500;}
+  summary::-webkit-details-marker{display:none;}
+  summary .plus{color:var(--gold); font-size:1.2rem; transition:transform .25s;}
+  details[open] summary .plus{transform:rotate(45deg);}
+  details p{margin-top:14px; font-size:0.9rem; color:var(--ivory-dim); line-height:1.7; max-width:520px;}
+
+  /* FOOTER — multi column */
+  footer{padding:72px 0 48px; border-top:1px solid var(--hair);}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; margin-bottom:56px;}
+  .foot-logo{font-family:'Fraunces', serif; font-size:1.5rem; letter-spacing:0.05em; margin-bottom:16px;}
+  .foot-logo span{color:var(--gold);}
+  .foot-tagline{font-size:0.9rem; color:var(--ivory-dim); line-height:1.6; max-width:280px;}
+  .foot-col h4{font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ivory-dim); margin-bottom:16px;}
+  .foot-col a{display:block; font-size:0.92rem; margin-bottom:12px; color:var(--ivory-dim);}
+  .foot-col a:hover{color:var(--ivory);}
+  .foot-bottom{display:flex; justify-content:space-between; align-items:center; padding-top:32px; border-top:1px solid var(--hair);}
+  .fine{font-size:0.82rem; color:var(--ivory-dim); opacity:0.7;}
+  .socials{display:flex; gap:14px;}
+  .social{width:38px; height:38px; border:1px solid var(--hair); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--ivory-dim); font-size:0.75rem; transition:border-color .2s, color .2s;}
+  .social:hover{border-color:var(--gold); color:var(--gold);}
+
+  /* RESPONSIVE fallback for narrow viewports */
+  @media(max-width:960px){
+    .wrap{padding:0 24px;}
+    .hero .wrap{grid-template-columns:1fr; text-align:left;}
+    .hero-visual{margin-top:40px;}
+    h1{font-size:2.6rem;}
+    .principle{grid-template-columns:1fr; gap:24px;}
+    .feature-grid{grid-template-columns:1fr 1fr;}
+    .steps-row{grid-template-columns:1fr; gap:32px;}
+    .steps-row::before{display:none;}
+    .showcase-split{grid-template-columns:1fr;}
+    .faq-split{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr; row-gap:32px;}
+    .nav-links{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">E<span>X</span>CLUSIO</div>
+    <div class="nav-links">
+      <a href="#features">Fonctionnalités</a>
+      <a href="#steps">Comment ça marche</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-right">
+      <a href="#" class="btn-ghost">Log In</a>
+      <a href="#" class="btn-primary">Créer mon compte</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="hero-mark" viewBox="0 0 200 200" fill="none">
+    <line x1="30" y1="30" x2="170" y2="170" stroke="var(--gold)" stroke-width="0.6" opacity="0.6"/>
+    <line x1="170" y1="30" x2="30" y2="170" stroke="var(--wine-bright)" stroke-width="0.6" opacity="0.6"/>
+  </svg>
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="eyebrow">Créé pour et par des créateurs</div>
+      <h1>Payez moins.<br><em>Gagnez plus.</em><br>Restez discret.</h1>
+      <p>La plateforme de monétisation qui reverse 95% de vos revenus, protège votre contenu et garde vos paiements confidentiels.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn-primary">Créer mon compte</a>
+        <a href="#faq" class="btn-secondary">En savoir plus</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><div class="num">95%</div><div class="label">Reversé</div></div>
+        <div class="stat"><div class="num">24/7</div><div class="label">Support</div></div>
+        <div class="stat"><div class="num">100%</div><div class="label">Propriété</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="phone">
+        <div class="phone-tag">Votre profil</div>
+        <div class="mock-card"><div class="mock-avatar"></div><div class="mock-lines"><div class="l1"></div><div class="l2"></div></div><div class="mock-price">$24</div></div>
+        <div class="mock-card"><div class="mock-avatar"></div><div class="mock-lines"><div class="l1"></div><div class="l2"></div></div><div class="mock-price">$12</div></div>
+        <div class="mock-card"><div class="mock-avatar"></div><div class="mock-lines"><div class="l1"></div><div class="l2"></div></div><div class="mock-price">$18</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<hr class="divider">
+
+<section>
+  <div class="wrap principle">
+    <div>
+      <div class="kicker">Le principe</div>
+      <h2>Qu'est-ce qu'Exclusio ?</h2>
+    </div>
+    <p class="lede">Exclusio connecte les créateurs à leur audience dans un environnement sûr et confidentiel. Revenus plus élevés, frais plus bas, protection renforcée du contenu — une plateforme pensée pour durer, pas pour être une mode. Continuellement enrichie pour offrir la meilleure expérience possible, aux créateurs comme à leurs abonnés.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head-row">
+      <h2>Quatre engagements,<br>sans compromis</h2>
+      <div class="kicker" style="margin-bottom:0;">Pourquoi Exclusio</div>
+    </div>
+    <div class="feature-grid">
+      <div class="feature">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M15 9.5c0-1.4-1.3-2.5-3-2.5s-3 1-3 2.2c0 3 6 1.5 6 4.3 0 1.3-1.3 2.5-3 2.5s-3-1.1-3-2.5"/></svg>
+        <h3>Gagner plus</h3>
+        <p>95% de vos revenus vous reviennent. Les 5% restants couvrent les frais bancaires et le support.</p>
+      </div>
+      <div class="feature">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.3"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+        <h3>Sécurité</h3>
+        <p>Vos données ne sont jamais partagées ni vendues. Paiements confidentiels, facturation discrète.</p>
+      </div>
+      <div class="feature">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <h3>Support 24/7</h3>
+        <p>Une équipe dédiée disponible à toute heure, pour les créateurs comme pour leurs abonnés.</p>
+      </div>
+      <div class="feature">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.3"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+        <h3>Protection</h3>
+        <p>Vous conservez 100% de la propriété de votre contenu, avec accès à une équipe juridique dédiée.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="steps">
+  <div class="wrap">
+    <div class="kicker">Trois étapes</div>
+    <h2>Comment démarrer</h2>
+    <div class="steps-row">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Créez votre compte</h3>
+        <p>Complétez le formulaire d'inscription. Une fois validé par l'équipe Exclusio, vous accédez à toutes les fonctionnalités et avantages.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Fixez votre tarif d'abonnement</h3>
+        <p>Définissez votre prix d'abonnement, ajustable à tout moment selon votre stratégie.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Publiez et promouvez</h3>
+        <p>Partagez votre profil Exclusio auprès de votre audience sur les autres plateformes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section>
+  <div class="wrap showcase-split">
+    <div>
+      <div class="kicker">Aperçu</div>
+      <h2>Votre contenu,<br>votre vitrine</h2>
+      <p class="lede">Un profil pensé comme une vitrine, pas comme un flux. Chaque publication affiche clairement son prix, votre audience sait exactement ce qu'elle débloque.</p>
+    </div>
+    <div class="showcase">
+      <div class="showcase-tag">Votre profil</div>
+      <div class="mock-card"><div class="mock-avatar"></div><div class="mock-lines"><div class="l1"></div><div class="l2"></div></div><div class="mock-price">$24</div></div>
+      <div class="mock-card"><div class="mock-avatar"></div><div class="mock-lines"><div class="l1"></div><div class="l2"></div></div><div class="mock-price">$12</div></div>
+      <div class="mock-card"><div class="mock-avatar"></div><div class="mock-lines"><div class="l1"></div><div class="l2"></div></div><div class="mock-price">$18</div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="faq">
+  <div class="wrap faq-split">
+    <div class="faq-card">
+      <h3>Une question ?</h3>
+      <p>Notre équipe est joignable en continu pour tout ce qui concerne votre compte, vos revenus ou votre contenu.</p>
+      <a href="#" class="btn-primary">Nous contacter</a>
+    </div>
+    <div>
+      <div class="kicker">Questions</div>
+      <h2 style="margin-bottom:24px;">Foire aux questions</h2>
+      <details open>
+        <summary>Comment commencer à gagner sur Exclusio ?<span class="plus">+</span></summary>
+        <p>Créez votre compte, faites-le valider par notre équipe, puis publiez votre premier contenu payant.</p>
+      </details>
+      <details>
+        <summary>Combien puis-je gagner avec Exclusio ?<span class="plus">+</span></summary>
+        <p>Vous conservez 95% de vos revenus, sans plafond. Votre gain dépend de votre audience et de votre tarification.</p>
+      </details>
+      <details>
+        <summary>Pourquoi choisir Exclusio ?<span class="plus">+</span></summary>
+        <p>Frais plus bas, protection de contenu renforcée, paiements confidentiels et support disponible 24/7.</p>
+      </details>
+      <details>
+        <summary>Besoin d'aide, qui contacter ?<span class="plus">+</span></summary>
+        <p>Notre équipe est joignable à contact@exclusio.io, disponible en continu.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">E<span>X</span>CLUSIO</div>
+        <p class="foot-tagline">Une plateforme conçue pour et avec les créateurs.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Produit</h4>
+        <a href="#features">Fonctionnalités</a>
+        <a href="#steps">Comment ça marche</a>
+        <a href="#">Tarifs</a>
+      </div>
+      <div class="foot-col">
+        <h4>Entreprise</h4>
+        <a href="#">À propos</a>
+        <a href="#">Presse</a>
+        <a href="#">Carrières</a>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <a href="#faq">FAQ</a>
+        <a href="#">Contact</a>
+        <a href="#">Confidentialité</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="fine">Exclusio © 2026 — Tous droits réservés.</div>
+      <div class="socials">
+        <a class="social" href="#">f</a>
+        <a class="social" href="#">◎</a>
+        <a class="social" href="#">▷</a>
+        <a class="social" href="#">in</a>
+        <a class="social" href="#">P</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
