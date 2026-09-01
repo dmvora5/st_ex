@@ -33,7 +33,7 @@ export function GetStarted() {
           ))}
         </div>
 
-        <div className="mt-12 text-center md:mt-16">
+        <div className="get-started-cta">
           <a
             href={getStarted.cta.href}
             target={getStarted.cta.openInNewTab ? "_blank" : undefined}
