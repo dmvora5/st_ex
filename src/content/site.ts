@@ -32,6 +32,7 @@ export const brand = {
 export const links = {
   login: "https://exclusio.io/login",
   register: "https://exclusio.io/register",
+  registerCreator: "https://exclusio.io/register/creator",
   email: "mailto:contact@exclusio.io",
   whatsapp: "https://wa.me/393520876137",
 };
@@ -64,137 +65,138 @@ export const header = {
 };
 
 export const footer = {
-  tagline: "A platform built for and with creators.",
-  columns: [
-    {
-      title: "Product",
-      links: [
-        { label: "Features", href: "#features" },
-        { label: "How it works", href: "#steps" },
-        { label: "FAQ", href: "#faq" },
-      ],
-    },
-    {
-      title: "Legal",
-      links: [
-        { label: "Privacy Policy", href: "/privacy-policy" },
-        { label: "Terms of Service", href: "/terms-of-service" },
-      ],
-    },
-    {
-      title: "Support",
-      links: [
-        { label: "FAQ", href: "#faq" },
-        { label: "Contact", href: links.email },
-      ],
-    },
+  navLinks: [
+    // { label: "Contact", href: links.email },
+    // { label: "Cookies", href: "https://exclusio.io/cookies", openInNewTab: true },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms of Service", href: "/terms-of-service" },
+    // {
+    //   label: "Acceptable Content Policy",
+    //   href: "https://exclusio.io/acceptable-content-policy",
+    //   openInNewTab: true,
+    // },
   ],
-  logo: {
-    src: "/logo.png",
-    alt: "Exclusio",
-    width: 280,
-    height: 39,
-  },
-  cta: {
-    label: "Sign up",
-    href: links.register,
-    openInNewTab: true,
-  },
+  copyright: "© Copyright 2026",
+  brand: "Exclusio",
+  copyrightSuffix: " All Right Reserved",
   social: [
     {
       name: "Facebook",
-      href: "https://www.facebook.com/share/1HysHL5FWr/?mibextid=LQQJ4d",
-      icon: "facebook" as const,
+      href: "https://www.facebook.com/share/1EsWsS1xi4/?mibextid=wwXIfr",
     },
     {
       name: "Instagram",
       href: "https://www.instagram.com/exclusio.io?igsh=OXE0MnpmcnF2bW96&utm_source=qr",
-      icon: "instagram" as const,
     },
     {
-      name: "YouTube",
-      href: "https://youtube.com/@exclusio_io?si=w0UWHhIhiDXLgdGy",
-      icon: "youtube" as const,
-    },
-    {
-      name: "LinkedIn",
-      href: "https://www.linkedin.com/company/exclusioofficial/",
-      icon: "linkedin" as const,
+      name: "TikTok",
+      href: "https://www.tiktok.com/@exclusio.io?_r=1&_t=ZS-97OMU2dMrPc",
     },
     {
       name: "Pinterest",
-      href: "https://pin.it/1oYUfqWY7",
-      icon: "pinterest" as const,
+      href: "https://pin.it/7MhHIlUpe",
     },
-  ],
-  copyright: "Copy right 2025 @ Exclusio,  All right reserved",
-  legalLinks: [
-    { label: "Terms of Service", href: "/terms-of-service" },
-    { label: "Privacy Policy", href: "/privacy-policy" },
+    {
+      name: "YouTube",
+      href: "https://m.youtube.com/@exclusio_io?ra=m",
+    },
   ],
 };
 
 export const hero = {
-  eyebrow: "Built for creators, by creators",
+  eyebrowBefore: "Built for creators,",
+  eyebrowAccent: "by creators",
   titleLine1: "Pay less.",
-  titleEmphasis: "Earn more.",
-  titleLine2: "Stay discreet.",
+  titleEmphasis: "Earn more",
+  titleLine2: "Scale without limits",
   description:
-    "The monetization platform that returns 95% of your earnings, protects your content, and keeps your payments confidential.",
+    "Start selling your content on Exclusio. Reach new paying fans with Exclusio Ads, keep 100% of your earnings, get your own dedicated Exclusio Manager, and enjoy enhanced content protection.",
   primaryCta: {
     label: "Sign up",
     href: links.register,
     openInNewTab: true,
   },
   secondaryCta: {
-    label: "Learn more",
-    href: "#faq",
-    openInNewTab: false,
+    label: "Apply to become an Exclusio Creator",
+    href: links.registerCreator,
+    openInNewTab: true,
   },
   stats: [
-    { value: "95%", label: "Returned" },
-    { value: "24/7", label: "Support" },
-    { value: "100%", label: "Ownership" },
+    { value: "0%", label: "Platform commission" },
+    { value: "New fans", label: "With Exclusio Ads" },
+    { value: "24/7", label: "Creator support" },
+    { value: "Protected", label: "Content" },
+    { value: "Multiple", label: "Ways to earn" },
   ],
   profileTag: "Your profile",
 };
 
+export const featuredInPress = {
+  label: "As featured in",
+  quote:
+    "Exclusio announces its international expansion to new markets, strengthening its position as a leading content monetization platform.",
+};
+
 export const principle = {
-  kicker: "The principle",
-  title: "What is Exclusio?",
-  description:
-    "Exclusio connects creators with their audience in a safe, confidential environment. Higher earnings, lower fees, and stronger content protection — a platform built to last, not to trend. Continuously enriched to deliver the best possible experience for creators and subscribers alike.",
+  title: "Struggling to Get More\nFans & Earn More?",
+  tabs: [
+    {
+      id: "exclusio",
+      title: "Exclusio",
+      heading: "What is Exclusio?",
+      paragraphs: [
+        "Exclusio is a creator platform built to help you monetize your audience and grow beyond it.",
+        "Sell exclusive content, subscriptions, paid messages and personalized private offers, while keeping 100% of your earnings. Reach new paying fans with Exclusio Ads, protect your content with advanced technology, and get dedicated support from your own Exclusio Manager.",
+      ],
+    },
+    {
+      id: "exclusio-ads",
+      title: "Exclusio ADS",
+      heading: "What is Exclusio Ads?",
+      paragraphs: [
+        "Exclusio Ads is a built-in advertising system designed to help creators reach new paying fans beyond their existing audience.",
+        "Promote your profile or content directly to relevant active fans across Exclusio. Choose the countries you want to target, set your budget, and track your campaign performance in real time.",
+        "For the first time, creators can actively invest in growing their audience directly within a creator platform — turning visibility into new revenue opportunities.",
+      ],
+    },
+  ],
 };
 
 export const featuresSection = {
-  kicker: "Why Exclusio",
-  title: "Four commitments,\nno compromises",
+  title: "Built for creators who want more.",
+  subtitle: "Everything you need to earn more and grow faster.",
 };
 
 export const features = [
   {
-    title: "Earn more",
+    title: "Keep 100% of your earnings",
     description:
-      "Exclusio creators retain 95% of their earnings. The remaining 5% goes to the platform to cover various operational costs, including banking fees and customer support.",
+      "0% platform commission. Your content, your earnings.",
     icon: "earn" as const,
   },
   {
-    title: "Safety",
+    title: "Reach new paying fans",
     description:
-      "The safety of our creators and subscribers is a top priority. Your data will never be shared or sold. Confidential payments for creators and discreet billing for subscribers.",
-    icon: "safety" as const,
+      "Grow beyond your existing audience with Exclusio Ads.",
+    icon: "ads" as const,
   },
   {
-    title: "24/7 Support",
+    title: "Monetize your way",
     description:
-      "A dedicated support team is available 24/7 to assist both creators and subscribers. +39 352 087 6137",
-    icon: "support" as const,
+      "Multiple ways to turn your audience into revenue.",
+    icon: "monetize" as const,
   },
   {
-    title: "Protection",
+    title: "Your content, protected",
     description:
-      "You retain 100% ownership of your content. Exclusio provides access to a legal team in the event of unauthorized or fraudulent use of your content.",
+      "Advanced protection to help keep your exclusive content secure.",
     icon: "protect" as const,
+  },
+  {
+    title: "Your own Exclusio Manager",
+    description:
+      "Dedicated support to help you get started and grow.",
+    icon: "manager" as const,
   },
 ];
 
@@ -203,38 +205,55 @@ export const getStarted = {
   title: "How to get started",
   steps: [
     {
-      title: "Create an Account",
+      title: "Apply to join Exclusio",
       description:
-        "To create an account on Exclusio, simply complete the sign up form. Once your application is approved by the Exclusio team, you'll gain access to all platform features along with a range of additional benefits.",
+        "Exclusio is referral-only. To apply as a creator, you must be referred by an existing Exclusio creator or fan. Submit your application and, once approved by our team, you'll get access to the platform.",
     },
     {
-      title: "Set up your Subscription Rate",
+      title: "Start earning",
       description:
-        "Once you've started sharing content on Exclusio, let your followers on other social platforms know about your Exclusio profile!",
+        "Create your profile and start monetizing your audience through exclusive content, subscriptions, paid messages, blasts and personalized private offers. You choose what to sell and set your own prices.",
     },
     {
-      title: "Create content & promote your Exclusio",
+      title: "Grow your audience",
       description:
-        "To begin sharing your content on Exclusio, you'll need to create an account. It's free to sign up, and takes only a few moments.",
+        "Bring your existing audience to Exclusio and reach new paying fans with Exclusio Ads. Promote your profile and content to relevant fans and turn more visibility into more sales.",
     },
   ],
   cta: {
-    label: "Sign Up",
+    label: "Start Earning",
     href: links.register,
     openInNewTab: true,
   },
 };
 
 export const showcase = {
-  kicker: "Preview",
-  title: "Your content,\nyour storefront",
+  kicker: "What you can sell",
+  title: "Monetize more than content.",
   description:
-    "A profile designed as a storefront, not a feed. Every post clearly shows its price — your audience knows exactly what they're unlocking.",
+    "Turn your audience into revenue your way. Sell exclusive content, subscriptions, paid messages, blasts, or create personalized private offers for your fans. You decide what to offer and how much to charge.",
   profileTag: "Your profile",
   mockCards: [
-    { price: "$24" },
-    { price: "$12" },
-    { price: "$18" },
+    {
+      title: "Exclusive Content",
+      price: "$99",
+      description: "Photos, videos & posts",
+    },
+    {
+      title: "Subscriptions",
+      price: "$79",
+      description: "Recurring exclusive access",
+    },
+    {
+      title: "Paid Messages",
+      price: "$5",
+      description: "Private paid content",
+    },
+    {
+      title: "Private Offers",
+      price: "$2000",
+      description: "Personalized offers & experiences",
+    },
   ],
 };
 
@@ -253,24 +272,39 @@ export const faq = {
   },
   items: [
     {
-      heading: "How do I start earning on Exclusio ?",
+      heading: "How can I join Exclusio?",
       description:
-        "Once your account has been created and approved by the Exclusio team, you will be able to start publishing paid content, promoting your profile, and accessing all the features of the platform.",
+        "Exclusio is a referral-only platform. To apply as a creator, you must first be referred by an existing Exclusio creator or fan. Once referred, you can submit your application for review by our team.",
+    },
+    {
+      heading: "What can I sell on Exclusio?",
+      description:
+        "You can monetize exclusive posts, subscriptions, paid messages, blasts and personalized private offers. You decide what you want to offer and how much you want to charge.",
+    },
+    {
+      heading: "How much does Exclusio charge creators?",
+      description:
+        "Exclusio takes 0% platform commission on your earnings. Only applicable payment processing fees apply.",
+    },
+    {
+      heading: "How can I reach new paying fans?",
+      description:
+        "With Exclusio Ads, you can promote your profile or content to relevant active fans across the platform, target selected countries and track your campaign performance.",
+    },
+    {
+      heading: "How does Exclusio protect my content?",
+      description:
+        "Exclusio uses advanced protection against unauthorized screenshots and screen recordings, combined with dynamic watermarking to help creators maintain greater control over their exclusive content.",
     },
     {
       heading: "How much can I earn with Exclusio?",
       description:
-        "There are no limits — it all depends on your goals. Exclusio provides everything you need to succeed, with a wide range of tools and reduced fees.",
+        "There is no fixed earning limit. Your revenue depends on your audience, pricing, offers, activity and sales. Exclusio gives you multiple monetization tools and growth tools to help you increase your earning potential.",
     },
     {
-      heading: "Why start with Exclusio?",
+      heading: "What support do I get as a creator?",
       description:
-        "Exclusio puts creators first! Creators on Exclusio retain 95% of their earnings, while only 5% is allocated to the platform to cover essential operational costs. These include banking fees, 24/7 customer support, advanced security measures and enhanced content protection, as well as the continuous development of new features aimed at delivering the highest level of experience for both creators and subscribers.",
-    },
-    {
-      heading: "If I need assistance, who should I contact?",
-      description:
-        "Exclusio provides a dedicated support team available 24/7 to assist you and answer any questions you may have. You can reach our support team via live chat on the platform, email, or WhatsApp. Email: contact@exclusio.io · WhatsApp: +39 352 087 6137",
+        "Creators get dedicated support to help with account setup, platform tools and growing their activity on Exclusio.",
     },
   ],
 };

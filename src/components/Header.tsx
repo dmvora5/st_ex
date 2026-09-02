@@ -3,7 +3,7 @@ import Link from "next/link";
 import { header, nav } from "@/content/site";
 
 export function Header() {
-  const { logo, cta, signUp } = header;
+  const { logo, signUp } = header;
 
   return (
     <nav className="site-nav">
@@ -28,14 +28,6 @@ export function Header() {
         </div>
 
         <div className="nav-right">
-          <a
-            href={cta.href}
-            target={cta.openInNewTab ? "_blank" : undefined}
-            rel={cta.openInNewTab ? "noopener noreferrer" : undefined}
-            className="btn-ghost"
-          >
-            {cta.label}
-          </a>
           <a
             href={signUp.href}
             target={signUp.openInNewTab ? "_blank" : undefined}

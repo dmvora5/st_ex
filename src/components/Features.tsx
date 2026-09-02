@@ -7,12 +7,12 @@ export function Features() {
       <div className="site-wrap">
         <div className="section-head-row desktop-only">
           <h2 className="section-title">{featuresSection.title}</h2>
-          <div className="kicker">{featuresSection.kicker}</div>
+          <p className="features-subtitle">{featuresSection.subtitle}</p>
         </div>
 
         <div className="section-head mobile-only">
-          <div className="kicker">{featuresSection.kicker}</div>
           <h2 className="section-title">{featuresSection.title}</h2>
+          <p className="features-subtitle">{featuresSection.subtitle}</p>
         </div>
 
         <div className="feature-grid">
