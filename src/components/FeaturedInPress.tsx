@@ -31,8 +31,7 @@ const PRESS_LOGO_PAGES = Array.from(
 export function FeaturedInPress() {
   return (
     <section className="hero-press" aria-label="Press coverage">
-      <p className="hero-press-label">{featuredInPress.label}</p>
-      <p className="hero-press-quote">&ldquo;{featuredInPress.quote}&rdquo;</p>
+      <p className="hero-press-label kicker-gradient">{featuredInPress.label}</p>
 
       <div className="hero-press-logos-scroll">
         <div className="hero-press-logos">

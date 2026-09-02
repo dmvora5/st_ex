@@ -33,6 +33,9 @@ export const links = {
   login: "https://exclusio.io/login",
   register: "https://exclusio.io/register",
   registerCreator: "https://exclusio.io/register/creator",
+  /** Same env as Exclusio frontend (`AuthEarnMoreCta`); production default matches exclusio.io. */
+  exclusioAds:
+    process.env.NEXT_PUBLIC_EXCLUSIO_ADS_URL ?? "https://dev.exclusioads.com",
   email: "mailto:contact@exclusio.io",
   whatsapp: "https://wa.me/393520876137",
 };
@@ -104,18 +107,11 @@ export const footer = {
 };
 
 export const hero = {
-  eyebrowBefore: "Built for creators,",
-  eyebrowAccent: "by creators",
   titleLine1: "Pay less.",
   titleEmphasis: "Earn more",
   titleLine2: "Scale without limits",
   description:
     "Start selling your content on Exclusio. Reach new paying fans with Exclusio Ads, keep 100% of your earnings, get your own dedicated Exclusio Manager, and enjoy enhanced content protection.",
-  primaryCta: {
-    label: "Sign up",
-    href: links.register,
-    openInNewTab: true,
-  },
   secondaryCta: {
     label: "Apply to become an Exclusio Creator",
     href: links.registerCreator,
@@ -127,44 +123,61 @@ export const hero = {
     { value: "24/7", label: "Creator support" },
     { value: "Protected", label: "Content" },
     { value: "Multiple", label: "Ways to earn" },
+    { value: "Your price", label: "You set the price" },
   ],
-  profileTag: "Your profile",
+  profileTag: "Earn your way, set your price",
 };
 
 export const featuredInPress = {
   label: "As featured in",
-  quote:
-    "Exclusio announces its international expansion to new markets, strengthening its position as a leading content monetization platform.",
 };
 
 export const principle = {
-  title: "Struggling to Get More\nFans & Earn More?",
+  eyebrow: "Built for creators, by creators",
+  titleBeforeMore: "Struggling to Get ",
+  titleMore: "More",
+  titleFans: "Fans",
+  titleEarnMore: "Earn More",
   tabs: [
     {
       id: "exclusio",
       title: "Exclusio",
-      heading: "What is Exclusio?",
+      headingBefore: "What is",
+      headingLogo: "exclusio" as const,
+      headingAfter: "?",
       paragraphs: [
         "Exclusio is a creator platform built to help you monetize your audience and grow beyond it.",
         "Sell exclusive content, subscriptions, paid messages and personalized private offers, while keeping 100% of your earnings. Reach new paying fans with Exclusio Ads, protect your content with advanced technology, and get dedicated support from your own Exclusio Manager.",
       ],
+      cta: {
+        label: "Start earning",
+        href: links.register,
+        openInNewTab: true,
+      },
     },
     {
       id: "exclusio-ads",
       title: "Exclusio ADS",
-      heading: "What is Exclusio Ads?",
+      headingBefore: "What is",
+      headingLogo: "exclusio-ads" as const,
+      headingAfter: "?",
       paragraphs: [
         "Exclusio Ads is a built-in advertising system designed to help creators reach new paying fans beyond their existing audience.",
         "Promote your profile or content directly to relevant active fans across Exclusio. Choose the countries you want to target, set your budget, and track your campaign performance in real time.",
         "For the first time, creators can actively invest in growing their audience directly within a creator platform — turning visibility into new revenue opportunities.",
       ],
+      cta: {
+        label: "Learn more about Exclusio Ads",
+        href: links.exclusioAds,
+        openInNewTab: true,
+      },
     },
   ],
 };
 
 export const featuresSection = {
-  title: "Built for creators who want more.",
-  subtitle: "Everything you need to earn more and grow faster.",
+  title: "Everything you need to earn more and grow faster.",
+  tagline: "Built for creators who want more.",
 };
 
 export const features = [
@@ -172,13 +185,13 @@ export const features = [
     title: "Keep 100% of your earnings",
     description:
       "0% platform commission. Your content, your earnings.",
-    icon: "earn" as const,
+    icon: "earnings" as const,
   },
   {
     title: "Reach new paying fans",
     description:
       "Grow beyond your existing audience with Exclusio Ads.",
-    icon: "ads" as const,
+    icon: "scale" as const,
   },
   {
     title: "Monetize your way",
@@ -190,13 +203,13 @@ export const features = [
     title: "Your content, protected",
     description:
       "Advanced protection to help keep your exclusive content secure.",
-    icon: "protect" as const,
+    icon: "protection" as const,
   },
   {
     title: "Your own Exclusio Manager",
     description:
       "Dedicated support to help you get started and grow.",
-    icon: "manager" as const,
+    icon: "support" as const,
   },
 ];
 
@@ -205,17 +218,20 @@ export const getStarted = {
   title: "How to get started",
   steps: [
     {
-      title: "Apply to join Exclusio",
+      titleBefore: "Apply to join ",
+      titleAccent: "Exclusio",
       description:
         "Exclusio is referral-only. To apply as a creator, you must be referred by an existing Exclusio creator or fan. Submit your application and, once approved by our team, you'll get access to the platform.",
     },
     {
-      title: "Start earning",
+      titleBefore: "Start ",
+      titleAccent: "earning",
       description:
         "Create your profile and start monetizing your audience through exclusive content, subscriptions, paid messages, blasts and personalized private offers. You choose what to sell and set your own prices.",
     },
     {
-      title: "Grow your audience",
+      titleBefore: "Grow your ",
+      titleAccent: "audience",
       description:
         "Bring your existing audience to Exclusio and reach new paying fans with Exclusio Ads. Promote your profile and content to relevant fans and turn more visibility into more sales.",
     },
@@ -227,35 +243,82 @@ export const getStarted = {
   },
 };
 
+export type ShowcaseMockCard = {
+  title: string;
+  description: string;
+  price?: string;
+  cardStyle?: "promo" | "step";
+};
+
 export const showcase = {
-  kicker: "What you can sell",
-  title: "Monetize more than content.",
-  description:
-    "Turn your audience into revenue your way. Sell exclusive content, subscriptions, paid messages, blasts, or create personalized private offers for your fans. You decide what to offer and how much to charge.",
-  profileTag: "Your profile",
-  mockCards: [
+  tabs: [
     {
-      title: "Exclusive Content",
-      price: "$99",
-      description: "Photos, videos & posts",
+      id: "sell",
+      tabTitle: "What you can sell",
+      kicker: "What you can sell",
+      titleAccent: "Monetize",
+      titleAfter: " more than content.",
+      description:
+        "Turn your audience into revenue your way. Sell exclusive content, subscriptions, paid messages, blasts, or create personalized private offers for your fans. You decide what to offer and how much to charge.",
+      profileTag: "Earn your way, set your price",
+      mockCards: [
+        {
+          title: "Exclusive Content",
+          price: "$99",
+          description: "Photos, videos & posts",
+        },
+        {
+          title: "Subscriptions",
+          price: "$79",
+          description: "Recurring exclusive access",
+        },
+        {
+          title: "Paid Messages",
+          price: "$10",
+          description: "Private paid content",
+        },
+        {
+          title: "Private Offers",
+          price: "$2000",
+          description: "Personalized offers & experiences",
+        },
+      ],
     },
     {
-      title: "Subscriptions",
-      price: "$79",
-      description: "Recurring exclusive access",
-    },
-    {
-      title: "Paid Messages",
-      price: "$5",
-      description: "Private paid content",
-    },
-    {
-      title: "Private Offers",
-      price: "$2000",
-      description: "Personalized offers & experiences",
+      id: "exclusio-ads",
+      tabTitle: "Exclusio Ads",
+      kicker: "How you can earn more",
+      title: "Grow your revenue. Reach new fans faster.",
+      description:
+        "Go beyond your existing audience with Exclusio Ads. Promote your profile, content, or send direct blasts to relevant active fans across Exclusio. Reach potential buyers faster and turn more visibility into new revenue opportunities.",
+      profileTag: "Exclusio Ads",
+      mockCards: [
+        {
+          title: "Choose how to promote",
+          description: "Profile · Content · Direct Blast",
+          cardStyle: "promo" as const,
+        },
+        {
+          title: "CHOOSE YOUR AUDIENCE",
+          description: "Target by country.",
+          cardStyle: "step" as const,
+        },
+        {
+          title: "SET YOUR BUDGET",
+          description: "Only pay for real exposure.",
+          cardStyle: "step" as const,
+        },
+        {
+          title: "TRACK YOUR RESULTS",
+          description: "See results in real time.",
+          cardStyle: "step" as const,
+        },
+      ],
     },
   ],
 };
+
+export const showcaseSellTab = showcase.tabs[0];
 
 export const faq = {
   kicker: "Questions",

@@ -20,7 +20,7 @@ export function FaqSection() {
         </div>
 
         <div>
-          <div className="kicker">{faq.kicker}</div>
+          <p className="kicker kicker-gradient">{faq.kicker}</p>
           <h2 className="section-title" style={{ marginBottom: "24px" }}>
             {faq.title}
           </h2>

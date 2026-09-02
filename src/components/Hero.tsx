@@ -1,4 +1,4 @@
-import { hero } from "@/content/site";
+import { hero, showcaseSellTab } from "@/content/site";
 import { FeaturedInPress } from "@/components/FeaturedInPress";
 import { HeroMark } from "@/components/HeroMark";
 import { MockProfile } from "@/components/MockProfile";
@@ -12,10 +12,6 @@ export function Hero() {
       <div className="site-wrap">
         <div className="hero-top">
           <div className="hero-copy">
-            <div className="eyebrow">
-              {hero.eyebrowBefore}{" "}
-              <span className="eyebrow-accent">{hero.eyebrowAccent}</span>
-            </div>
             <h1 className="hero-title">
               {hero.titleLine1}
               <br />
@@ -26,22 +22,12 @@ export function Hero() {
             <p>{hero.description}</p>
             <div className="hero-ctas">
               <a
-                href={hero.primaryCta.href}
-                target={hero.primaryCta.openInNewTab ? "_blank" : undefined}
-                rel={
-                  hero.primaryCta.openInNewTab ? "noopener noreferrer" : undefined
-                }
-                className="btn-primary"
-              >
-                {hero.primaryCta.label}
-              </a>
-              <a
                 href={hero.secondaryCta.href}
                 target={hero.secondaryCta.openInNewTab ? "_blank" : undefined}
                 rel={
                   hero.secondaryCta.openInNewTab ? "noopener noreferrer" : undefined
                 }
-                className="btn-secondary hero-creator-btn"
+                className="btn-primary hero-creator-btn"
               >
                 {hero.secondaryCta.label}
               </a>
@@ -49,7 +35,11 @@ export function Hero() {
           </div>
 
           <div className="hero-visual">
-            <MockProfile tag={hero.profileTag} variant="phone" />
+            <MockProfile
+              tag={hero.profileTag}
+              cards={showcaseSellTab.mockCards}
+              variant="phone"
+            />
           </div>
         </div>
 

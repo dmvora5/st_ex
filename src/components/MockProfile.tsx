@@ -1,10 +1,12 @@
-import { showcase } from "@/content/site";
+import type { ShowcaseMockCard } from "@/content/site";
 
 export function MockProfile({
   tag,
+  cards,
   variant = "showcase",
 }: {
   tag: string;
+  cards: ShowcaseMockCard[];
   variant?: "phone" | "showcase";
 }) {
   const wrapperClass =
@@ -12,15 +14,18 @@ export function MockProfile({
 
   return (
     <div className={wrapperClass}>
-      <div className="mock-tag">{tag}</div>
-      {showcase.mockCards.map((card) => (
-        <div key={card.title} className="mock-card">
+      <div className="mock-tag mock-tag-gradient">{tag}</div>
+      {cards.map((card) => (
+        <div
+          key={card.title}
+          className={`mock-card${card.cardStyle ? ` mock-card--${card.cardStyle}` : ""}`}
+        >
           <div className="mock-avatar" />
           <div className="mock-copy">
             <div className="mock-title">{card.title}</div>
             <div className="mock-desc">{card.description}</div>
           </div>
-          <div className="mock-price">{card.price}</div>
+          {card.price ? <div className="mock-price">{card.price}</div> : null}
         </div>
       ))}
     </div>

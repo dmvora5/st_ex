@@ -1,15 +1,32 @@
 "use client";
 
-import { Fragment, useState } from "react";
+import { useState } from "react";
+import {
+  InlineExclusioAdsLogo,
+  InlineExclusioLogo,
+} from "@/components/InlineBrandLogos";
 import { principle } from "@/content/site";
 
-function renderWithNormalAmp(text: string) {
-  return text.split("&").map((part, index, parts) => (
-    <Fragment key={index}>
-      {part}
-      {index < parts.length - 1 && <span className="amp-normal">&</span>}
-    </Fragment>
-  ));
+function PrincipleTabHeading({
+  before,
+  logo,
+  after,
+}: {
+  before: string;
+  logo: "exclusio" | "exclusio-ads";
+  after: string;
+}) {
+  return (
+    <h3 className="principle-tab-heading principle-tab-heading--with-logo">
+      <span>{before}</span>
+      {logo === "exclusio-ads" ? (
+        <InlineExclusioAdsLogo />
+      ) : (
+        <InlineExclusioLogo />
+      )}
+      <span>{after}</span>
+    </h3>
+  );
 }
 
 export function Principle() {
@@ -21,13 +38,16 @@ export function Principle() {
     <section className="content-section">
       <div className="site-wrap principle-grid">
         <div className="principle-intro">
+          <div className="kicker kicker-gradient">{principle.eyebrow}</div>
           <h2 className="section-title">
-            {principle.title.split("\n").map((line, lineIndex, lines) => (
-              <Fragment key={lineIndex}>
-                {renderWithNormalAmp(line)}
-                {lineIndex < lines.length - 1 && <br />}
-              </Fragment>
-            ))}
+            {principle.titleBeforeMore}
+            <span className="gradient-text">{principle.titleMore}</span>
+            <br />
+            <span className="gradient-text">{principle.titleFans}</span>
+            {" "}
+            <span className="amp-normal">&</span>
+            {" "}
+            <span className="gradient-text">{principle.titleEarnMore}</span>?
           </h2>
           <nav className="principle-tabs" aria-label="Principle topics">
             {principle.tabs.map((tab) => {
@@ -48,10 +68,28 @@ export function Principle() {
           </nav>
         </div>
         <div className="principle-copy">
-          <h3 className="principle-tab-heading">{activeTab.heading}</h3>
+          <PrincipleTabHeading
+            before={activeTab.headingBefore}
+            logo={activeTab.headingLogo}
+            after={activeTab.headingAfter}
+          />
           {activeTab.paragraphs.map((paragraph) => (
             <p key={paragraph} className="lede">{paragraph}</p>
           ))}
+          {activeTab.cta ? (
+            <div className="principle-cta">
+              <a
+                href={activeTab.cta.href}
+                target={activeTab.cta.openInNewTab ? "_blank" : undefined}
+                rel={
+                  activeTab.cta.openInNewTab ? "noopener noreferrer" : undefined
+                }
+                className="btn-primary"
+              >
+                {activeTab.cta.label}
+              </a>
+            </div>
+          ) : null}
         </div>
       </div>
     </section>
