@@ -13,9 +13,9 @@ export function LegalPage({
         <h1>{title}</h1>
       </div>
       <div className="content-container">
-        {sections.map((section) => (
+        {sections.map((section, index) => (
           <div key={section.heading}>
-            {section.heading === "Introduction" ? (
+            {index === 0 ? (
               <h2>{section.heading}</h2>
             ) : (
               <h3>{section.heading}</h3>

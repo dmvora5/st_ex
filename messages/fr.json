@@ -1,0 +1,420 @@
+{
+  "language": {
+    "label": "Langue",
+    "en": "English",
+    "ar": "العربية",
+    "fr": "Français",
+    "switchTo": "Changer de langue"
+  },
+  "siteMeta": {
+    "name": "Exclusio",
+    "tagline": "Payez moins. Gagnez plus. Grandissez sans limites",
+    "description": "Exclusio est une plateforme conçue pour les créateurs et leurs fans. Connectez-vous à votre audience et monétisez votre contenu dans un environnement sûr et sécurisé — avec des revenus plus élevés, des frais plus bas et un support 24/7."
+  },
+  "nav": {
+    "links": {
+      "features": "Fonctionnalités",
+      "howItWorks": "Comment ça marche",
+      "faq": "FAQ"
+    }
+  },
+  "header": {
+    "logoAlt": "Exclusio",
+    "signUp": "S'inscrire",
+    "logIn": "Connexion"
+  },
+  "footer": {
+    "privacyPolicy": "Politique de confidentialité",
+    "termsOfService": "Conditions d'utilisation",
+    "copyright": "© Copyright 2026",
+    "brand": "Exclusio",
+    "copyrightSuffix": " Tous droits réservés",
+    "social": {
+      "Facebook": "Facebook",
+      "Instagram": "Instagram",
+      "TikTok": "TikTok",
+      "Pinterest": "Pinterest",
+      "YouTube": "YouTube"
+    }
+  },
+  "hero": {
+    "titleLine1": "Payez moins",
+    "titleEmphasis": "Gagnez plus",
+    "titleLine2": "Grandissez sans limites",
+    "description": "Commencez à vendre votre contenu sur Exclusio. Atteignez de nouveaux fans payants avec Exclusio Ads, conservez 100 % de vos revenus, bénéficiez de votre propre Exclusio Manager dédié et profitez d'une protection renforcée du contenu.",
+    "secondaryCta": "Postuler pour devenir créateur Exclusio",
+    "profileTag": "Gagnez à votre façon, fixez vos prix",
+    "statsTitle": "Conçu pour les créateurs, par des créateurs",
+    "stats": [
+      {
+        "value": "0 %",
+        "label": "Commission plateforme"
+      },
+      {
+        "value": "Nouveaux fans",
+        "label": "Avec Exclusio Ads"
+      },
+      {
+        "value": "24/7",
+        "label": "Support créateurs"
+      },
+      {
+        "value": "Protégé",
+        "label": "Contenu"
+      },
+      {
+        "value": "Plusieurs",
+        "label": "Façons de gagner"
+      },
+      {
+        "value": "Votre prix",
+        "label": "Vous fixez le prix"
+      }
+    ]
+  },
+  "featuredInPress": {
+    "label": "Vu dans"
+  },
+  "principle": {
+    "eyebrow": "Conçu pour les créateurs, par des créateurs",
+    "titleBeforeMore": "Du mal à obtenir ",
+    "titleMore": "plus",
+    "titleFans": "de fans",
+    "titleEarnMore": "gagner plus",
+    "tabsAriaLabel": "Sujets principaux",
+    "tabs": {
+      "exclusio": {
+        "title": "Exclusio",
+        "headingBefore": "Qu'est-ce que",
+        "headingAfter": " ?",
+        "paragraphs": [
+          "Exclusio est une plateforme créateur conçue pour vous aider à monétiser votre audience et à la faire grandir.",
+          "Vendez du contenu exclusif, des abonnements, des messages payants et des offres privées personnalisées, tout en conservant 100 % de vos revenus. Atteignez de nouveaux fans payants avec Exclusio Ads, protégez votre contenu grâce à une technologie avancée, et bénéficiez d'un support dédié de votre propre Exclusio Manager."
+        ],
+        "cta": "Commencer à gagner"
+      },
+      "exclusio-ads": {
+        "title": "Exclusio Ads",
+        "headingBefore": "Qu'est-ce que",
+        "headingAfter": " ?",
+        "paragraphs": [
+          "Exclusio Ads est un système publicitaire intégré conçu pour aider les créateurs à atteindre de nouveaux fans payants au-delà de leur audience existante.",
+          "Promouvez votre profil ou votre contenu directement auprès de fans actifs pertinents sur Exclusio. Choisissez les pays à cibler, définissez votre budget et suivez les performances de votre campagne en temps réel.",
+          "Pour la première fois, les créateurs peuvent investir activement dans la croissance de leur audience directement au sein d'une plateforme créateur — transformant la visibilité en nouvelles opportunités de revenus."
+        ],
+        "cta": "En savoir plus sur Exclusio Ads"
+      }
+    }
+  },
+  "featuresSection": {
+    "title": "Tout ce dont vous avez besoin pour gagner plus et grandir plus vite.",
+    "tagline": "Conçu pour les créateurs qui en veulent plus."
+  },
+  "features": {
+    "items": [
+      {
+        "title": "Gardez 100 % de vos revenus",
+        "description": "0 % de commission plateforme. Votre contenu, vos revenus."
+      },
+      {
+        "title": "Atteignez de nouveaux fans payants",
+        "description": "Développez-vous au-delà de votre audience existante avec Exclusio Ads."
+      },
+      {
+        "title": "Monétisez à votre façon",
+        "description": "Plusieurs façons de transformer votre audience en revenus."
+      },
+      {
+        "title": "Votre contenu, protégé",
+        "description": "Une protection avancée pour sécuriser votre contenu exclusif."
+      },
+      {
+        "title": "Votre propre Exclusio Manager",
+        "description": "Un support dédié pour vous aider à démarrer et à grandir."
+      }
+    ]
+  },
+  "getStarted": {
+    "kicker": "Trois étapes",
+    "title": "Comment démarrer",
+    "steps": [
+      {
+        "titleBefore": "Postulez pour rejoindre ",
+        "titleAccent": "Exclusio",
+        "description": "Exclusio fonctionne uniquement sur parrainage. Pour postuler en tant que créateur, vous devez être parrainé par un créateur ou un fan Exclusio existant. Soumettez votre candidature et, une fois approuvée par notre équipe, vous aurez accès à la plateforme."
+      },
+      {
+        "titleBefore": "Commencez à ",
+        "titleAccent": "gagner",
+        "description": "Créez votre profil et commencez à monétiser votre audience via du contenu exclusif, des abonnements, des messages payants, des blasts et des offres privées personnalisées. Vous choisissez ce que vous vendez et fixez vos propres prix."
+      },
+      {
+        "titleBefore": "Développez votre ",
+        "titleAccent": "audience",
+        "description": "Amenez votre audience existante sur Exclusio et atteignez de nouveaux fans payants avec Exclusio Ads. Promouvez votre profil et votre contenu auprès de fans pertinents et transformez plus de visibilité en plus de ventes."
+      }
+    ],
+    "cta": "Commencer à gagner"
+  },
+  "showcase": {
+    "tabsAriaLabel": "Sujets de présentation",
+    "tabs": {
+      "sell": {
+        "tabTitle": "Ce que vous pouvez vendre",
+        "kicker": "Ce que vous pouvez vendre avec Exclusio",
+        "titleAccent": "Monétisez",
+        "titleAfter": " plus que du contenu.",
+        "description": "Transformez votre audience en revenus à votre façon. Vendez du contenu exclusif, des abonnements, des messages payants, des blasts, ou créez des offres privées personnalisées pour vos fans. Vous décidez de ce que vous proposez et du prix.",
+        "profileTag": "Gagnez à votre façon, fixez vos prix",
+        "mockCards": [
+          {
+            "title": "Contenu exclusif",
+            "price": "$99",
+            "description": "Photos, vidéos et posts"
+          },
+          {
+            "title": "Abonnements",
+            "price": "$79",
+            "description": "Accès exclusif récurrent"
+          },
+          {
+            "title": "Messages payants",
+            "price": "$10",
+            "description": "Contenu privé payant"
+          },
+          {
+            "title": "Offres privées",
+            "price": "$2000",
+            "description": "Offres et expériences personnalisées"
+          }
+        ]
+      },
+      "exclusio-ads": {
+        "tabTitle": "Comment gagner plus",
+        "kicker": "Comment gagner plus avec Exclusio Ads",
+        "titleAccent": "Développez",
+        "titleMiddle": " vos revenus. Atteignez de nouveaux fans ",
+        "titleAccent2": "plus vite",
+        "titleAfter": ".",
+        "description": "Allez au-delà de votre audience existante avec Exclusio Ads. Promouvez votre profil, votre contenu, ou envoyez des blasts directs à des fans actifs pertinents sur Exclusio. Atteignez des acheteurs potentiels plus rapidement et transformez plus de visibilité en nouvelles opportunités de revenus.",
+        "profileTag": "Exclusio Ads",
+        "mockCards": [
+          {
+            "title": "Choisissez comment promouvoir",
+            "description": "Profil · Contenu · Blast direct",
+            "cardStyle": "promo"
+          },
+          {
+            "title": "Choisissez votre audience",
+            "description": "Ciblez par pays",
+            "cardStyle": "step"
+          },
+          {
+            "title": "Définissez votre budget",
+            "description": "Ne payez que pour une vraie exposition",
+            "cardStyle": "step"
+          },
+          {
+            "title": "Suivez vos résultats",
+            "description": "Voyez les résultats en temps réel",
+            "cardStyle": "step"
+          }
+        ]
+      }
+    }
+  },
+  "faq": {
+    "kicker": "Questions",
+    "title": "Questions fréquemment posées",
+    "contactCard": {
+      "title": "Une question ?",
+      "description": "Notre équipe est disponible 24 h/24 pour tout ce qui concerne votre compte, vos revenus ou votre contenu.",
+      "cta": "Nous contacter"
+    },
+    "items": [
+      {
+        "heading": "Comment rejoindre Exclusio ?",
+        "description": "Exclusio est une plateforme sur invitation uniquement. Pour postuler en tant que créateur, vous devez d'abord être parrainé par un créateur ou un fan Exclusio existant. Une fois parrainé, vous pouvez soumettre votre candidature pour examen par notre équipe."
+      },
+      {
+        "heading": "Que puis-je vendre sur Exclusio ?",
+        "description": "Vous pouvez monétiser des posts exclusifs, des abonnements, des messages payants, des blasts et des offres privées personnalisées. Vous décidez de ce que vous proposez et du prix."
+      },
+      {
+        "heading": "Combien Exclusio facture-t-il aux créateurs ?",
+        "description": "Exclusio prend 0 % de commission plateforme sur vos revenus. Seuls les frais de traitement des paiements applicables s'appliquent."
+      },
+      {
+        "heading": "Comment atteindre de nouveaux fans payants ?",
+        "description": "Avec Exclusio Ads, vous pouvez promouvoir votre profil ou votre contenu auprès de fans actifs pertinents sur la plateforme, cibler certains pays et suivre les performances de votre campagne."
+      },
+      {
+        "heading": "Comment Exclusio protège-t-il mon contenu ?",
+        "description": "Exclusio utilise une protection avancée contre les captures d'écran et enregistrements d'écran non autorisés, combinée à un filigrane dynamique pour aider les créateurs à mieux contrôler leur contenu exclusif."
+      },
+      {
+        "heading": "Combien puis-je gagner avec Exclusio ?",
+        "description": "Il n'y a pas de plafond de gains fixe. Vos revenus dépendent de votre audience, de vos prix, de vos offres, de votre activité et de vos ventes. Exclusio vous donne plusieurs outils de monétisation et de croissance pour augmenter votre potentiel de gains."
+      },
+      {
+        "heading": "Quel support ai-je en tant que créateur ?",
+        "description": "Les créateurs bénéficient d'un support dédié pour la configuration du compte, les outils de la plateforme et le développement de leur activité sur Exclusio."
+      }
+    ]
+  },
+  "privacyPolicy": {
+    "title": "Politique de confidentialité",
+    "metaDescription": "Comment Eccelso Capital LTD collecte, utilise et protège les données personnelles sur start.exclusio.io.",
+    "sections": [
+      {
+        "heading": "Introduction",
+        "paragraphs": [
+          "Cette politique de confidentialité explique comment Eccelso Capital LTD (« nous ») collecte, utilise et protège vos données personnelles lorsque vous visitez notre site start.exclusio.io. Nous nous engageons à protéger votre vie privée et à respecter le Règlement général sur la protection des données (RGPD) ainsi que les autres lois applicables.",
+          "Informations sur la société : Eccelso Capital LTD, enregistrée à Chypre sous le numéro HE 479174. Adresse : Voukourestiou, 25, NEPTUNE HOUSE, 1er étage, Flat/Office 1, Zakaki, 3045, Limassol, Chypre. E-mail : contact@exclusio.io"
+        ]
+      },
+      {
+        "heading": "1. Données que nous collectons",
+        "paragraphs": [
+          "Lorsque vous visitez notre site, nous pouvons collecter les informations suivantes :"
+        ],
+        "bullets": [
+          "Informations que vous fournissez volontairement : telles que votre nom, adresse e-mail et tout détail soumis via notre formulaire de contact.",
+          "Données collectées automatiquement : notamment votre adresse IP, type de navigateur, système d'exploitation et comportement de navigation sur notre site.",
+          "Cookies et technologies de suivi : comme décrit dans notre politique relative aux cookies."
+        ]
+      },
+      {
+        "heading": "2. Comment nous utilisons vos données",
+        "paragraphs": [
+          "Nous pouvons utiliser vos données personnelles pour :"
+        ],
+        "bullets": [
+          "Répondre à vos demandes et fournir un support client.",
+          "Améliorer le contenu et les fonctionnalités de notre site.",
+          "Assurer la sécurité et le bon fonctionnement de notre site.",
+          "Respecter nos obligations légales."
+        ]
+      },
+      {
+        "heading": "3. Base juridique du traitement (RGPD)",
+        "paragraphs": [
+          "Nous traitons vos données personnelles sur les bases juridiques suivantes :"
+        ],
+        "bullets": [
+          "Votre consentement (par ex. lorsque vous soumettez un formulaire de contact).",
+          "Intérêts légitimes (par ex. maintenir la sécurité du site et améliorer nos services).",
+          "Obligations légales (par ex. conservation de dossiers à des fins de conformité)."
+        ]
+      },
+      {
+        "heading": "4. Partage de vos données",
+        "paragraphs": [
+          "Nous ne vendons pas vos données personnelles. Nous pouvons les partager uniquement avec :"
+        ],
+        "bullets": [
+          "Des prestataires qui nous aident à exploiter le site.",
+          "Les autorités lorsque la loi l'exige.",
+          "Des prestataires d'analytique tiers (par ex. Google Analytics)."
+        ]
+      },
+      {
+        "heading": "5. Conservation des données",
+        "paragraphs": [
+          "Nous conserverons vos données personnelles uniquement aussi longtemps que nécessaire aux fins décrites dans cette politique de confidentialité, sauf si une période de conservation plus longue est requise par la loi."
+        ]
+      },
+      {
+        "heading": "6. Vos droits (RGPD)",
+        "paragraphs": [
+          "En vertu du RGPD, vous avez le droit de :"
+        ],
+        "bullets": [
+          "Accéder aux données personnelles que nous détenons à votre sujet.",
+          "Demander la correction ou la suppression de vos données.",
+          "Retirer votre consentement à tout moment.",
+          "Vous opposer au traitement de vos données.",
+          "Demander une copie de vos données dans un format portable. Pour exercer vos droits, contactez-nous à contact@exclusio.io."
+        ]
+      },
+      {
+        "heading": "7. Mesures de sécurité",
+        "paragraphs": [
+          "Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre l'accès non autorisé, la perte ou l'utilisation abusive."
+        ]
+      },
+      {
+        "heading": "8. Liens tiers",
+        "paragraphs": [
+          "Notre site peut contenir des liens vers des sites externes. Nous ne sommes pas responsables des pratiques de confidentialité ni du contenu de ces sites tiers."
+        ]
+      },
+      {
+        "heading": "9. Modifications de cette politique",
+        "paragraphs": [
+          "Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Toute modification sera publiée sur cette page avec une date de « Dernière mise à jour »."
+        ]
+      },
+      {
+        "heading": "10. Nous contacter",
+        "paragraphs": [
+          "Si vous avez des questions sur cette politique de confidentialité ou sur la façon dont nous traitons vos données, contactez-nous : Eccelso Capital LTD · E-mail : contact@exclusio.io · Adresse : Voukourestiou, 25, NEPTUNE HOUSE, 1er étage, Flat/Office 1, Zakaki, 3045, Limassol, Chypre"
+        ]
+      }
+    ]
+  },
+  "termsOfService": {
+    "title": "Conditions d'utilisation",
+    "metaDescription": "Conditions régissant l'utilisation du site marketing Exclusio exploité par Eccelso Capital LTD.",
+    "sections": [
+      {
+        "heading": "Introduction",
+        "paragraphs": [
+          "Les présentes conditions d'utilisation (« Conditions ») régissent votre utilisation du site start.exclusio.io (« nous »), exploité par Eccelso Capital LTD, société enregistrée à Chypre sous le numéro HE 479174, Adresse : Voukourestiou, 25, NEPTUNE HOUSE, 1er étage, Flat/Office 1, Zakaki, 3045, Limassol, Chypre, E-mail : contact@exclusio.io. En accédant ou en utilisant ce site, vous acceptez d'être lié par ces Conditions. Si vous n'êtes pas d'accord, vous ne devez pas utiliser ce site."
+        ]
+      },
+      {
+        "heading": "1. Objet du site",
+        "paragraphs": [
+          "Ce site est fourni à des fins d'information et de promotion uniquement. Il n'héberge pas de contenu généré par les utilisateurs et ne traite pas directement les abonnements ou les paiements."
+        ]
+      },
+      {
+        "heading": "2. Propriété intellectuelle",
+        "paragraphs": [
+          "Tout le contenu de ce site — y compris textes, graphiques, logos, images et design — appartient à Eccelso Capital LTD ou à ses concédants et est protégé par les lois applicables sur la propriété intellectuelle. Vous ne pouvez pas copier, reproduire, distribuer ou créer d'œuvres dérivées sans autorisation écrite préalable."
+        ]
+      },
+      {
+        "heading": "3. Liens tiers",
+        "paragraphs": [
+          "Ce site peut contenir des liens vers des sites tiers. Nous ne sommes pas responsables du contenu, des pratiques de confidentialité ou de la disponibilité de ces sites externes."
+        ]
+      },
+      {
+        "heading": "4. Avertissements",
+        "paragraphs": [
+          "Nous faisons des efforts raisonnables pour que les informations de ce site soient exactes et à jour, mais nous ne garantissons ni l'exhaustivité ni l'exactitude. Le site est fourni « tel quel » sans garantie d'aucune sorte, expresse ou implicite."
+        ]
+      },
+      {
+        "heading": "5. Limitation de responsabilité",
+        "paragraphs": [
+          "Dans toute la mesure permise par la loi, Eccelso Capital LTD ne pourra être tenu responsable de tout dommage direct, indirect, accessoire ou consécutif résultant de votre utilisation, ou de l'impossibilité d'utiliser, ce site."
+        ]
+      },
+      {
+        "heading": "6. Modifications des présentes Conditions",
+        "paragraphs": [
+          "Nous pouvons mettre à jour ces Conditions à tout moment. Les modifications seront publiées sur cette page. L'utilisation continue du site après publication des modifications vaut acceptation des Conditions mises à jour."
+        ]
+      },
+      {
+        "heading": "7. Contact",
+        "paragraphs": [
+          "Eccelso Capital LTD · E-mail : contact@exclusio.io · Adresse : Voukourestiou, 25, NEPTUNE HOUSE, 1er étage, Flat/Office 1, Zakaki, 3045, Limassol, Chypre"
+        ]
+      }
+    ]
+  }
+}

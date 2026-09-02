@@ -1,4 +1,5 @@
-import { getStarted } from "@/content/site";
+import { getTranslations } from "next-intl/server";
+import { getStartedCta } from "@/content/site";
 
 function StepTitle({
   before,
@@ -15,15 +16,22 @@ function StepTitle({
   );
 }
 
-export function GetStarted() {
+export async function GetStarted() {
+  const t = await getTranslations("getStarted");
+  const steps = t.raw("steps") as Array<{
+    titleBefore: string;
+    titleAccent: string;
+    description: string;
+  }>;
+
   return (
     <section id="steps" className="content-section get-started-section">
       <div className="site-wrap">
-        <div className="kicker kicker-gradient">{getStarted.kicker}</div>
-        <h2 className="section-title">{getStarted.title}</h2>
+        <div className="kicker kicker-gradient">{t("kicker")}</div>
+        <h2 className="section-title">{t("title")}</h2>
 
         <div className="steps-row">
-          {getStarted.steps.map((step, index) => (
+          {steps.map((step, index) => (
             <div key={step.titleAccent} className="step-item">
               <div className="step-num">
                 {String(index + 1).padStart(2, "0")}
@@ -35,7 +43,7 @@ export function GetStarted() {
         </div>
 
         <div className="step-list">
-          {getStarted.steps.map((step, index) => (
+          {steps.map((step, index) => (
             <div key={step.titleAccent} className="step-item">
               <div className="step-num">
                 {String(index + 1).padStart(2, "0")}
@@ -50,14 +58,14 @@ export function GetStarted() {
 
         <div className="get-started-cta">
           <a
-            href={getStarted.cta.href}
-            target={getStarted.cta.openInNewTab ? "_blank" : undefined}
+            href={getStartedCta.href}
+            target={getStartedCta.openInNewTab ? "_blank" : undefined}
             rel={
-              getStarted.cta.openInNewTab ? "noopener noreferrer" : undefined
+              getStartedCta.openInNewTab ? "noopener noreferrer" : undefined
             }
             className="btn-primary"
           >
-            {getStarted.cta.label}
+            {t("cta")}
           </a>
         </div>
       </div>

@@ -1,0 +1,52 @@
+/* RTL overrides for the marketing site.
+ * LTR rules stay in globals.css — only [dir="rtl"] selectors live here.
+ */
+
+[dir="rtl"] .icon-directional {
+  transform: scaleX(-1);
+}
+
+.force-ltr,
+[dir="rtl"] .force-ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Mock card price hugs the start edge in RTL */
+[dir="rtl"] .mock-price {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Step number spacing */
+[dir="rtl"] .step-num {
+  padding-right: 0;
+  padding-left: 16px;
+}
+
+[dir="rtl"] .step-list .step-num {
+  padding-left: 0;
+}
+
+/* FAQ expand affordance */
+[dir="rtl"] .faq-plus {
+  margin-left: 0;
+  margin-right: 16px;
+}
+
+/* Footer nav pipe separators — first item has no pipe; flip physical side */
+[dir="rtl"] .footer-nav-links li::before {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .footer-nav-links li:first-child::before {
+  content: none;
+}
+
+/* Features tagline alignment on small screens */
+@media (max-width: 767px) {
+  [dir="rtl"] .features-tagline {
+    text-align: right;
+  }
+}

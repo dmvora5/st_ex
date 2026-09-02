@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { featuredInPress } from "@/content/site";
+import { getTranslations } from "next-intl/server";
 
 const PRESS_LOGOS = [
   { name: "Forbes", label: "Forbes", style: "forbes" },
@@ -28,10 +28,12 @@ const PRESS_LOGO_PAGES = Array.from(
     ),
 );
 
-export function FeaturedInPress() {
+export async function FeaturedInPress() {
+  const t = await getTranslations("featuredInPress");
+
   return (
     <section className="hero-press" aria-label="Press coverage">
-      <p className="hero-press-label kicker-gradient">{featuredInPress.label}</p>
+      <p className="hero-press-label kicker-gradient">{t("label")}</p>
 
       <div className="hero-press-logos-scroll">
         <div className="hero-press-logos">

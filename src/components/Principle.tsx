@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import {
   InlineExclusioAdsLogo,
   InlineExclusioLogo,
 } from "@/components/InlineBrandLogos";
-import { principle } from "@/content/site";
+import { principleTabsMeta } from "@/content/site";
 
 function PrincipleTabHeading({
   before,
@@ -30,27 +31,26 @@ function PrincipleTabHeading({
 }
 
 export function Principle() {
-  const [activeTabId, setActiveTabId] = useState(principle.tabs[0].id);
-  const activeTab =
-    principle.tabs.find((tab) => tab.id === activeTabId) ?? principle.tabs[0];
+  const t = useTranslations("principle");
+  const [activeTabId, setActiveTabId] = useState(principleTabsMeta[0].id);
+  const activeMeta =
+    principleTabsMeta.find((tab) => tab.id === activeTabId) ??
+    principleTabsMeta[0];
+  const paragraphs = t.raw(`tabs.${activeMeta.id}.paragraphs`) as string[];
 
   return (
     <section className="content-section">
       <div className="site-wrap principle-grid">
         <div className="principle-intro">
-          <div className="kicker kicker-gradient">{principle.eyebrow}</div>
           <h2 className="section-title">
-            {principle.titleBeforeMore}
-            <span className="gradient-text">{principle.titleMore}</span>
+            {t("titleBeforeMore")}
+            {t("titleMore")}
             <br />
-            <span className="gradient-text">{principle.titleFans}</span>
-            {" "}
-            <span className="amp-normal">&</span>
-            {" "}
-            <span className="gradient-text">{principle.titleEarnMore}</span>?
+            {t("titleFans")}{" "}
+            <span className="amp-normal">&</span> {t("titleEarnMore")}?
           </h2>
-          <nav className="principle-tabs" aria-label="Principle topics">
-            {principle.tabs.map((tab) => {
+          <nav className="principle-tabs" aria-label={t("tabsAriaLabel")}>
+            {principleTabsMeta.map((tab) => {
               const isActive = tab.id === activeTabId;
 
               return (
@@ -61,7 +61,7 @@ export function Principle() {
                   aria-selected={isActive}
                   onClick={() => setActiveTabId(tab.id)}
                 >
-                  {tab.title}
+                  {t(`tabs.${tab.id}.title`)}
                 </button>
               );
             })}
@@ -69,24 +69,28 @@ export function Principle() {
         </div>
         <div className="principle-copy">
           <PrincipleTabHeading
-            before={activeTab.headingBefore}
-            logo={activeTab.headingLogo}
-            after={activeTab.headingAfter}
+            before={t(`tabs.${activeMeta.id}.headingBefore`)}
+            logo={activeMeta.headingLogo}
+            after={t(`tabs.${activeMeta.id}.headingAfter`)}
           />
-          {activeTab.paragraphs.map((paragraph) => (
-            <p key={paragraph} className="lede">{paragraph}</p>
+          {paragraphs.map((paragraph) => (
+            <p key={paragraph} className="lede">
+              {paragraph}
+            </p>
           ))}
-          {activeTab.cta ? (
+          {activeMeta.cta ? (
             <div className="principle-cta">
               <a
-                href={activeTab.cta.href}
-                target={activeTab.cta.openInNewTab ? "_blank" : undefined}
+                href={activeMeta.cta.href}
+                target={activeMeta.cta.openInNewTab ? "_blank" : undefined}
                 rel={
-                  activeTab.cta.openInNewTab ? "noopener noreferrer" : undefined
+                  activeMeta.cta.openInNewTab
+                    ? "noopener noreferrer"
+                    : undefined
                 }
                 className="btn-primary"
               >
-                {activeTab.cta.label}
+                {t(`tabs.${activeMeta.id}.cta`)}
               </a>
             </div>
           ) : null}

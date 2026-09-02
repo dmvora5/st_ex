@@ -1,4 +1,5 @@
-import { footer } from "@/content/site";
+import { getTranslations } from "next-intl/server";
+import { footerSocial } from "@/content/site";
 
 const SOCIAL_ICONS = {
   Facebook: (
@@ -28,19 +29,21 @@ const SOCIAL_ICONS = {
   ),
 } as const;
 
-export function FooterSocialLinks() {
+export async function FooterSocialLinks() {
+  const t = await getTranslations("footer");
+
   return (
     <div className="footer-social-links">
       <ul>
-        {footer.social.map((item) => (
+        {footerSocial.map((item) => (
           <li key={item.name}>
             <a
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={item.name}
+              aria-label={t(`social.${item.name}`)}
             >
-              {SOCIAL_ICONS[item.name as keyof typeof SOCIAL_ICONS]}
+              {SOCIAL_ICONS[item.name]}
             </a>
           </li>
         ))}

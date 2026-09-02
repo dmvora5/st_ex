@@ -19,7 +19,7 @@ export default function HomePage() {
       <GetStarted />
       <SectionDivider />
       <Showcase />
-      <SectionDivider />
+      <ExclusioXDivider />
       <FaqSection />
     </>
   );

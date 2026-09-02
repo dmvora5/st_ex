@@ -1,38 +1,28 @@
 import Link from "next/link";
-import { footer } from "@/content/site";
+import { getTranslations } from "next-intl/server";
 import { FooterSocialLinks } from "@/components/FooterSocialLinks";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { footerNavHrefs } from "@/content/site";
 
-export function Footer() {
+export async function Footer() {
+  const t = await getTranslations("footer");
+
   return (
     <footer className="site-footer">
       <div className="site-wrap footer-inner">
         <ul className="footer-nav-links">
-          {footer.navLinks.map((link) => (
-            <li key={link.label}>
-              {link.href.startsWith("/") ? (
-                <Link href={link.href}>{link.label}</Link>
-              ) : (
-                <a
-                  href={link.href}
-                  target={"openInNewTab" in link && link.openInNewTab ? "_blank" : undefined}
-                  rel={
-                    "openInNewTab" in link && link.openInNewTab
-                      ? "noopener noreferrer"
-                      : undefined
-                  }
-                >
-                  {link.label}
-                </a>
-              )}
+          {footerNavHrefs.map((link) => (
+            <li key={link.key}>
+              <Link href={link.href}>{t(link.key)}</Link>
             </li>
           ))}
         </ul>
 
         <div className="footer-copyright">
           <p>
-            {footer.copyright}{" "}
-            <Link href="/">{footer.brand}</Link>
-            {footer.copyrightSuffix}
+            {t("copyright")}{" "}
+            <Link href="/">{t("brand")}</Link>
+            {t("copyrightSuffix")}
           </p>
         </div>
 
@@ -58,6 +48,7 @@ export function Footer() {
         </svg>
 
         <FooterSocialLinks />
+        <LanguageSwitcher />
       </div>
     </footer>
   );

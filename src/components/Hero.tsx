@@ -1,9 +1,15 @@
-import { hero, showcaseSellTab } from "@/content/site";
+import { getTranslations } from "next-intl/server";
 import { FeaturedInPress } from "@/components/FeaturedInPress";
 import { HeroMark } from "@/components/HeroMark";
 import { MockProfile } from "@/components/MockProfile";
+import { heroCta, type ShowcaseMockCard } from "@/content/site";
 
-export function Hero() {
+export async function Hero() {
+  const t = await getTranslations("hero");
+  const tShowcase = await getTranslations("showcase");
+  const stats = t.raw("stats") as Array<{ value: string; label: string }>;
+  const mockCards = tShowcase.raw("tabs.sell.mockCards") as ShowcaseMockCard[];
+
   return (
     <header className="hero-section">
       <div className="hero-bg-mark" aria-hidden="true">
@@ -13,31 +19,29 @@ export function Hero() {
         <div className="hero-top">
           <div className="hero-copy">
             <h1 className="hero-title">
-              {hero.titleLine1}
+              {t("titleLine1")}
               <br />
-              <em>{hero.titleEmphasis}</em>
+              <em>{t("titleEmphasis")}</em>
               <br />
-              {hero.titleLine2}
+              {t("titleLine2")}
             </h1>
-            <p>{hero.description}</p>
+            <p>{t("description")}</p>
             <div className="hero-ctas">
               <a
-                href={hero.secondaryCta.href}
-                target={hero.secondaryCta.openInNewTab ? "_blank" : undefined}
-                rel={
-                  hero.secondaryCta.openInNewTab ? "noopener noreferrer" : undefined
-                }
+                href={heroCta.href}
+                target={heroCta.openInNewTab ? "_blank" : undefined}
+                rel={heroCta.openInNewTab ? "noopener noreferrer" : undefined}
                 className="btn-primary hero-creator-btn"
               >
-                {hero.secondaryCta.label}
+                {t("secondaryCta")}
               </a>
             </div>
           </div>
 
           <div className="hero-visual">
             <MockProfile
-              tag={hero.profileTag}
-              cards={showcaseSellTab.mockCards}
+              tag={t("profileTag")}
+              cards={mockCards}
               variant="phone"
             />
           </div>
@@ -45,8 +49,10 @@ export function Hero() {
 
         <FeaturedInPress />
 
+        <h2 className="hero-stats-title">{t("statsTitle")}</h2>
+
         <div className="stat-row">
-          {hero.stats.map((stat) => (
+          {stats.map((stat) => (
             <div key={`${stat.value}-${stat.label}`} className="stat">
               <div className="num">{stat.value}</div>
               <div className="label">{stat.label}</div>

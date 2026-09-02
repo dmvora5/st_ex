@@ -1,0 +1,104 @@
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 14px 0 0;
+  width: 100%;
+}
+
+.footerTrigger {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+  color: #222;
+  font-family: var(--font-body), "Outfit", sans-serif;
+  line-height: 1.2;
+}
+
+.footerTrigger:hover {
+  border-color: rgba(151, 199, 226, 0.7);
+  background: rgba(151, 199, 226, 0.1);
+}
+
+.footerLabel {
+  font-size: 11px;
+  font-weight: 500;
+  color: #8a8a8a;
+}
+
+.footerValue {
+  font-size: 12px;
+  font-weight: 700;
+  color: #2f2f2f;
+}
+
+.footerCaret {
+  width: 0;
+  height: 0;
+  border-left: 3.5px solid transparent;
+  border-right: 3.5px solid transparent;
+  border-top: 4.5px solid #9a9a9a;
+  transition: transform 0.15s ease;
+}
+
+.footerCaretOpen {
+  transform: rotate(180deg);
+}
+
+.footerList {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 6px);
+  transform: translateX(-50%);
+  z-index: 40;
+  min-width: 160px;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footerOption {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 10px;
+  margin: 0;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-body), "Outfit", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+}
+
+.footerOption:hover {
+  background: rgba(151, 199, 226, 0.18);
+}
+
+.footerOptionActive {
+  background: rgba(244, 189, 211, 0.35);
+  color: #111;
+}
+
+[dir="rtl"] .footerOption {
+  text-align: right;
+}

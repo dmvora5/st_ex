@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { LegalPage } from "@/components/LegalPage";
-import { termsOfService } from "@/content/site";
+import type { LegalSection } from "@/content/site";
 
-export const metadata: Metadata = {
-  title: "Terms of Service",
-  description:
-    "Terms governing use of the Exclusio marketing website operated by Eccelso Capital LTD.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("termsOfService");
+  return {
+    title: t("title"),
+    description: t("metaDescription"),
+  };
+}
 
-export default function TermsOfServicePage() {
-  return <LegalPage title={termsOfService.title} sections={termsOfService.sections} />;
+export default async function TermsOfServicePage() {
+  const t = await getTranslations("termsOfService");
+  const sections = t.raw("sections") as LegalSection[];
+
+  return <LegalPage title={t("title")} sections={sections} />;
 }

@@ -1,33 +1,45 @@
 "use client";
 
 import { useState } from "react";
-import { showcase } from "@/content/site";
+import { useTranslations } from "next-intl";
 import { MockProfile } from "@/components/MockProfile";
+import { showcaseTabIds, type ShowcaseMockCard } from "@/content/site";
+
+type ShowcaseTabId = (typeof showcaseTabIds)[number];
 
 export function Showcase() {
-  const [activeTabId, setActiveTabId] = useState(showcase.tabs[0].id);
-  const activeTab =
-    showcase.tabs.find((tab) => tab.id === activeTabId) ?? showcase.tabs[0];
+  const t = useTranslations("showcase");
+  const [activeTabId, setActiveTabId] = useState<ShowcaseTabId>(
+    showcaseTabIds[0],
+  );
+
+  const mockCards = t.raw(`tabs.${activeTabId}.mockCards`) as ShowcaseMockCard[];
+  const titleMiddle = t.has(`tabs.${activeTabId}.titleMiddle`)
+    ? t(`tabs.${activeTabId}.titleMiddle`)
+    : null;
+  const titleAccent2 = t.has(`tabs.${activeTabId}.titleAccent2`)
+    ? t(`tabs.${activeTabId}.titleAccent2`)
+    : null;
 
   return (
     <section className="content-section">
       <div className="site-wrap">
         <nav
           className="principle-tabs showcase-tabs"
-          aria-label="Showcase topics"
+          aria-label={t("tabsAriaLabel")}
         >
-          {showcase.tabs.map((tab) => {
-            const isActive = tab.id === activeTabId;
+          {showcaseTabIds.map((tabId) => {
+            const isActive = tabId === activeTabId;
 
             return (
               <button
-                key={tab.id}
+                key={tabId}
                 type="button"
                 className={`principle-tab${isActive ? " is-active" : ""}`}
                 aria-selected={isActive}
-                onClick={() => setActiveTabId(tab.id)}
+                onClick={() => setActiveTabId(tabId)}
               >
-                {tab.tabTitle}
+                {t(`tabs.${tabId}.tabTitle`)}
               </button>
             );
           })}
@@ -35,20 +47,24 @@ export function Showcase() {
 
         <div className="showcase-split">
           <div>
-            <div className="kicker kicker-gradient">{activeTab.kicker}</div>
-            {activeTab.titleAccent ? (
-              <h2 className="section-title">
-                <span className="gradient-text">{activeTab.titleAccent}</span>
-                {activeTab.titleAfter}
-              </h2>
-            ) : (
-              <h2 className="section-title">{activeTab.title}</h2>
-            )}
-            <p className="lede">{activeTab.description}</p>
+            <div className="kicker kicker-gradient">
+              {t(`tabs.${activeTabId}.kicker`)}
+            </div>
+            <h2 className="section-title">
+              <span className="gradient-text">
+                {t(`tabs.${activeTabId}.titleAccent`)}
+              </span>
+              {titleMiddle}
+              {titleAccent2 ? (
+                <span className="gradient-text">{titleAccent2}</span>
+              ) : null}
+              {t(`tabs.${activeTabId}.titleAfter`)}
+            </h2>
+            <p className="lede">{t(`tabs.${activeTabId}.description`)}</p>
           </div>
           <MockProfile
-            tag={activeTab.profileTag}
-            cards={activeTab.mockCards}
+            tag={t(`tabs.${activeTabId}.profileTag`)}
+            cards={mockCards}
             variant="showcase"
           />
         </div>
