@@ -44,11 +44,11 @@ export function FeaturedInPress() {
                     <span className="hero-press-logo-divider" aria-hidden="true" />
                   ) : null}
                   <span className="hero-press-logo-item" title={outlet.name}>
-                    {outlet.apMark ? (
+                    {"apMark" in outlet && outlet.apMark ? (
                       <span className={`hero-press-logo-text hero-press-logo--${outlet.style}`}>
                         <strong>AP</strong> news
                       </span>
-                    ) : outlet.stacked ? (
+                    ) : "stacked" in outlet && outlet.stacked ? (
                       <span className={`hero-press-logo-text hero-press-logo--${outlet.style}`}>
                         <span>Street</span>
                         <span>Insider</span>

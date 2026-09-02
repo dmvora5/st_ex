@@ -14,9 +14,11 @@ export function Footer() {
               ) : (
                 <a
                   href={link.href}
-                  target={link.openInNewTab ? "_blank" : undefined}
+                  target={"openInNewTab" in link && link.openInNewTab ? "_blank" : undefined}
                   rel={
-                    link.openInNewTab ? "noopener noreferrer" : undefined
+                    "openInNewTab" in link && link.openInNewTab
+                      ? "noopener noreferrer"
+                      : undefined
                   }
                 >
                   {link.label}
