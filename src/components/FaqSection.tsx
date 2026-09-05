@@ -1,5 +1,4 @@
 import { getTranslations } from "next-intl/server";
-import { faqContactCta } from "@/content/site";
 
 export async function FaqSection() {
   const t = await getTranslations("faq");
@@ -11,22 +10,7 @@ export async function FaqSection() {
   return (
     <section id="faq" className="content-section">
       <div className="site-wrap faq-split">
-        <div className="faq-card">
-          <h3>{t("contactCard.title")}</h3>
-          <p>{t("contactCard.description")}</p>
-          <a
-            href={faqContactCta.href}
-            target={faqContactCta.openInNewTab ? "_blank" : undefined}
-            rel={
-              faqContactCta.openInNewTab ? "noopener noreferrer" : undefined
-            }
-            className="btn-primary"
-          >
-            {t("contactCard.cta")}
-          </a>
-        </div>
-
-        <div>
+        <div className="faq-content">
           <p className="kicker kicker-gradient">{t("kicker")}</p>
           <h2 className="section-title" style={{ marginBottom: "24px" }}>
             {t("title")}

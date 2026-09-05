@@ -20,15 +20,16 @@
   },
   "header": {
     "logoAlt": "Exclusio",
-    "signUp": "إنشاء حساب",
+    "signUp": "ابدأ الربح",
     "logIn": "تسجيل الدخول"
   },
   "footer": {
+    "contact": "اتصل بنا",
     "privacyPolicy": "سياسة الخصوصية",
     "termsOfService": "شروط الخدمة",
-    "copyright": "© حقوق النشر 2026",
+    "copyright": "©️ 2026 ECCELSO CAPITAL LTD. جميع الحقوق محفوظة.",
     "brand": "Exclusio",
-    "copyrightSuffix": " جميع الحقوق محفوظة",
+    "copyrightSuffix": "",
     "social": {
       "Facebook": "فيسبوك",
       "Instagram": "إنستغرام",
@@ -36,6 +37,24 @@
       "Pinterest": "بينتيريست",
       "YouTube": "يوتيوب"
     }
+  },
+  "contactModal": {
+    "eyebrow": "الدعم",
+    "title": "اتصل بنا",
+    "intro": "تحتاج مساعدة؟ فريق الدعم هنا لمساعدتك.",
+    "introSecondary": "نرد عادة على جميع الاستفسارات خلال 24 ساعة.",
+    "emailLabel": "البريد الإلكتروني",
+    "telegramLabel": "تيليجرام",
+    "whatsappLabel": "واتساب / الهاتف",
+    "copyEmailAria": "نسخ عنوان البريد الإلكتروني",
+    "copyTelegramAria": "نسخ معرف تيليجرام",
+    "copyPhoneAria": "نسخ رقم الهاتف",
+    "copied": "تم نسخ {label} إلى الحافظة",
+    "copyFailed": "تعذر النسخ إلى الحافظة",
+    "labelEmail": "البريد الإلكتروني",
+    "labelTelegram": "معرف تيليجرام",
+    "labelPhone": "رقم الهاتف",
+    "close": "إغلاق"
   },
   "hero": {
     "titleLine1": "ادفع أقل",

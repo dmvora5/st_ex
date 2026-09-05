@@ -20,15 +20,16 @@
   },
   "header": {
     "logoAlt": "Exclusio",
-    "signUp": "Sign up",
+    "signUp": "Start earning",
     "logIn": "Log in"
   },
   "footer": {
+    "contact": "Contact",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
-    "copyright": "© Copyright 2026",
+    "copyright": "©️ 2026 ECCELSO CAPITAL LTD. ALL RIGHTS RESERVED.",
     "brand": "Exclusio",
-    "copyrightSuffix": " All Right Reserved",
+    "copyrightSuffix": "",
     "social": {
       "Facebook": "Facebook",
       "Instagram": "Instagram",
@@ -36,6 +37,24 @@
       "Pinterest": "Pinterest",
       "YouTube": "YouTube"
     }
+  },
+  "contactModal": {
+    "eyebrow": "Support",
+    "title": "Contact Us",
+    "intro": "Need assistance? Our support team is here to help.",
+    "introSecondary": "We typically respond to all inquiries within 24 hours.",
+    "emailLabel": "E-mail",
+    "telegramLabel": "Telegram",
+    "whatsappLabel": "WhatsApp / Phone",
+    "copyEmailAria": "Copy email address",
+    "copyTelegramAria": "Copy Telegram handle",
+    "copyPhoneAria": "Copy phone number",
+    "copied": "{label} copied to clipboard",
+    "copyFailed": "Could not copy to clipboard",
+    "labelEmail": "Email",
+    "labelTelegram": "Telegram handle",
+    "labelPhone": "Phone number",
+    "close": "Close"
   },
   "hero": {
     "titleLine1": "Pay less",

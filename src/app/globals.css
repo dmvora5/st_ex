@@ -768,20 +768,24 @@ img {
 
 .features-head {
   margin-bottom: 48px;
+  text-align: center;
 }
 
 .features-main-title {
-  max-width: 640px;
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
 }
 
 .features-tagline {
-  margin: 14px 0 0;
+  margin: 14px auto 0;
   max-width: 520px;
   font-family: var(--font-display);
   font-size: clamp(1.05rem, 2.4vw, 1.35rem);
   font-weight: 500;
   line-height: 1.35;
-  display: inline-block;
+  display: block;
+  text-align: center;
   background: linear-gradient(90deg, #97c7e2 0%, #f4bdd3 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -980,9 +984,18 @@ img {
 /* FAQ */
 
 .faq-split {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 64px;
+  display: flex;
+  justify-content: center;
+}
+
+.faq-content {
+  width: 100%;
+  max-width: 720px;
+}
+
+.faq-content .kicker,
+.faq-content .section-title {
+  text-align: center;
 }
 
 .get-started-section {
@@ -990,7 +1003,7 @@ img {
 }
 
 .get-started-cta {
-  padding-top: 10px;
+  padding-top: 28px;
   text-align: center;
 }
 
@@ -1029,9 +1042,9 @@ img {
 }
 
 #faq .section-title {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25;
   color: var(--auth-text);
 }
@@ -1108,6 +1121,10 @@ img {
 .footer-inner {
   max-width: 720px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .footer-nav-links {
@@ -1118,6 +1135,7 @@ img {
   list-style: none;
   margin: 0 0 16px;
   padding: 0;
+  width: 100%;
 }
 
 .footer-nav-links li {
@@ -1140,16 +1158,23 @@ img {
   content: none;
 }
 
-.footer-nav-links a {
+.footer-nav-links a,
+.footer-nav-link-btn {
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 400;
   color: #1a1a1a;
   text-decoration: none;
   transition: color 0.2s;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  line-height: inherit;
 }
 
-.footer-nav-links a:hover {
+.footer-nav-links a:hover,
+.footer-nav-link-btn:hover {
   color: var(--exclusio-pink-alt);
 }
 
@@ -1306,6 +1331,8 @@ img {
 
   .site-nav .site-wrap {
     height: 64px;
+    align-items: flex-start;
+    padding-top: 15px;
   }
 
   .nav-logo img {
@@ -1463,15 +1490,27 @@ img {
 
   .stat {
     text-align: center;
+    overflow: visible;
+    min-width: 0;
   }
 
   .stat .num {
     font-size: 1.4rem;
     min-height: 1.85rem;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    overflow-wrap: break-word;
+    padding-inline: 0.05em;
+    box-sizing: border-box;
   }
 
   .stat .label {
     font-size: 0.62rem;
+    margin-inline: auto;
+    text-align: center;
   }
 
   .hero-visual {
@@ -1578,6 +1617,7 @@ img {
 
   .features-head {
     margin-bottom: 32px;
+    text-align: center;
   }
 
   .features-main-title {
@@ -1587,7 +1627,9 @@ img {
   .features-tagline {
     font-size: 1.05rem;
     margin-top: 12px;
-    text-align: left;
+    display: block;
+    max-width: none;
+    text-align: center;
   }
 
   .feature-grid {
@@ -1617,36 +1659,18 @@ img {
 
   .feature-icon {
     flex-shrink: 0;
-    width: 56px;
-    height: 56px;
-    margin: 0 0 14px;
-    border-radius: 50%;
-    background: linear-gradient(
-      145deg,
-      rgba(151, 199, 226, 0.35) 0%,
-      rgba(244, 189, 211, 0.32) 100%
-    );
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.65);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .feature-icon--plain {
     width: 44px;
     height: 44px;
+    margin: 0 0 14px;
     border-radius: 0;
     background: none;
     box-shadow: none;
+    display: flex;
+    align-items: center;
     justify-content: flex-start;
   }
 
   .feature-logo {
-    width: 32px;
-    height: 32px;
-  }
-
-  .feature-icon--plain .feature-logo {
     width: 40px;
     height: 40px;
   }
@@ -1712,7 +1736,8 @@ img {
     padding: 0 5px;
   }
 
-  .footer-nav-links a {
+  .footer-nav-links a,
+  .footer-nav-link-btn {
     font-size: 12px;
   }
 

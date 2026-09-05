@@ -1,8 +1,7 @@
-import Link from "next/link";
 import { getTranslations } from "next-intl/server";
+import { FooterNavLinks } from "@/components/FooterNavLinks";
 import { FooterSocialLinks } from "@/components/FooterSocialLinks";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { footerNavHrefs } from "@/content/site";
 
 export async function Footer() {
   const t = await getTranslations("footer");
@@ -10,20 +9,10 @@ export async function Footer() {
   return (
     <footer className="site-footer">
       <div className="site-wrap footer-inner">
-        <ul className="footer-nav-links">
-          {footerNavHrefs.map((link) => (
-            <li key={link.key}>
-              <Link href={link.href}>{t(link.key)}</Link>
-            </li>
-          ))}
-        </ul>
+        <FooterNavLinks />
 
         <div className="footer-copyright">
-          <p>
-            {t("copyright")}{" "}
-            <Link href="/">{t("brand")}</Link>
-            {t("copyrightSuffix")}
-          </p>
+          <p>{t("copyright")}</p>
         </div>
 
         <svg

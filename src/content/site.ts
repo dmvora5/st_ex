@@ -117,6 +117,15 @@ export const faqContactCta = {
   openInNewTab: false,
 };
 
+/** Contact channels — same as Exclusio Contact Us modal */
+export const contactChannels = {
+  email: "contact@exclusio.io",
+  telegramDisplay: "@exclusio_io",
+  telegramHref: "https://t.me/exclusio_io",
+  phoneDisplay: "+39 352 087 6137",
+  phoneHref: links.whatsapp,
+};
+
 export type ShowcaseMockCard = {
   title: string;
   description: string;
